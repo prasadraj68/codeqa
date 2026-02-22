@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "z-code-generation-mcp": {
+      "type": "streamable-http",
+      "url": "http://localhost:57996/mcp",
+      "alwaysAllow": []
+    },
+    "z-code-explanation-mcp": {
+      "type": "streamable-http",
+      "url": "http://localhost:56346/mcp",
+      "alwaysAllow": [],
+      "timeout": 300
+    },
+    "watsonx-code-assistant-for-z": {
+      "url": "http://localhost:63476/mcp",
+      "type": "streamable-http"
+    },
+    "z-understand-analysis": {
+      "type": "streamable-http",
+      "url": "https://rh92container1.fyre.ibm.com:9444/analysis-mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:AUTH_Z_UNDERSTAND}",
+        "zNonce": "8a0324c2-257c-4922-a82e-60e75adee70e"
+      },
+      "timeout": 900,
+      "disabledTools": [
+        "projects"
+      ]
+    },
+    "z-understand-services": {
+      "type": "streamable-http",
+      "url": "https://rh92container1.fyre.ibm.com:9444/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:AUTH_Z_UNDERSTAND}",
+        "zNonce": "f929bf65-10f9-4544-bdcc-85cd736b93c4"
+      },
+      "timeout": 900
+    },
+    "z-understand-local": {
+      "type": "streamable-http",
+      "url": "http://localhost:53745/mcp",
+      "headers": {
+        "zNonce": "44da6822-99dc-4edd-b7c9-7e2696c66493"
+      },
+      "timeout": 900
+    }
+  }
+}
